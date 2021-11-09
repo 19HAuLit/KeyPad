@@ -52,7 +52,7 @@ void setup() {
   pinMode(KEYPAD_D, INPUT);
 
   servo.attach(SERVO);
-  servo.write(0);
+  servo.write(90);
 }
 
 void loop() {
@@ -79,9 +79,9 @@ void loop() {
   else if (logInput.endsWith("1104"))
   {
     logInput = "";
-  servoSpeed(0, 150, 1000, servo);
-  servoSpeed(150, 15, 2500, servo);
-  servoSpeed(15, 180, 500, servo);
+  servoSpeed(90, 0, 1000, servo);
+  servoSpeed(0, 180, 2500, servo);
+  servoSpeed(180, 90, 500, servo);
   }
   
 }
