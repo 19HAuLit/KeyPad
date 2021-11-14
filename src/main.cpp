@@ -196,14 +196,13 @@ void bombHasBeenPlanted(){
 
 void servoSpeed(int startAngle, int stopAngle, int timeMS, Servo servo){
   int deltaAngle = abs(stopAngle - startAngle);
-  for (int angle = startAngle; angle <= stopAngle; angle++)
+
+  int angle = startAngle;
+  while (angle != stopAngle)
   {
     servo.write(angle);
     delay(timeMS/deltaAngle);
+    if (startAngle - stopAngle > 0) angle --;
+    else angle ++;
   }  
-  for (int angle = startAngle; angle >= stopAngle; angle--)
-  {
-    servo.write(angle);
-    delay(timeMS/deltaAngle);
-  }
 }
